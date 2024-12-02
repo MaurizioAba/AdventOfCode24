@@ -9,5 +9,4 @@ I expect the project to continue until Christmas.
 
 License
 "Advent of Code" and all Advent of Code related content are property of Advent of Code and protected by copyright:
-
 https://adventofcode.com/2024/about#legal
