@@ -4,3 +4,7 @@
 1 3 2 4 5
 8 6 4 4 1
 1 3 6 7 9
+
+Note 2 parte:
+Se un report di livelli altrimenti sicuro contiene un errore, il Problem Dampener permette di considerarlo ancora sicuro eliminando virtualmente quell'errore.
+Questo significa che i report che diventano sicuri eliminando un solo livello errato sono comunque considerati sicuri, aumentando il numero totale di report sicuri.

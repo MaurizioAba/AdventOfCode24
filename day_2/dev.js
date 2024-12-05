@@ -45,7 +45,30 @@ function countSafeReports(reports) {
     return safeCount; // Returns the number of safe reports
 }
 
-console.log(countSafeReports(linesInput));
-
-
 // 2 parte
+
+// Function to check if a report becomes safe after removing one level
+function isSafeWithRemoval(levels) {
+    for (let i = 0; i < levels.length; i++) {
+        const modifLevels = levels.slice(0, i).concat(levels.slice(i + 1)); // Remove one level
+        if (isSafeReport(modifLevels.join(' '))) {
+            return true; // If removing one level makes it safe, return true
+        }
+    }
+    return false; // If no single removal makes it safe, return false
+}
+
+// Function to count how many reports are safe considering the Problem Dampener
+function countSafeReportsWithDampener(reports) {
+    let safeCount = 0; // Counter for safe reports
+
+    for (const report of reports) {
+        const levels = report.split(' ').map(Number);
+        if (isSafeReport(report) || isSafeWithRemoval(levels)) { // Check if the report is safe or becomes safe with removal
+            safeCount++; // Increment the counter if the report is safe
+        }
+    }
+
+    return safeCount; // Returns the number of safe reports
+}
+
