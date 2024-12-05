@@ -1,0 +1,7 @@
+xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))
+
+Note: 
+lettura del file input contenente la memoria corrotta.
+utilizzare una regex per trovare le istruzioni valide mul(X,Y), do() e don't().
+tenere traccia dello stato abilitato/disabilitato delle istruzioni mul.
+eseguire le moltiplicazioni solo per le istruzioni mul abilitate poi sommare i risultati.
