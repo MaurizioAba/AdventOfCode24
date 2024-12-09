@@ -1,0 +1,40 @@
+MMMSXXMASM
+MSAMXMSMSA
+AMXSXMAAMM
+MSAMASMSMX
+XMASAMXAMM
+XXAMMXXAMA
+SMSMSASXSS
+SAXAMASAAA
+MAMMMXMMMM
+MXMXAXMASX
+
+
+
+....XXMAS.
+.SAMXMS...
+...S..A...
+..A.A.MS.X
+XMASAMX.MM
+X.....XA.A
+S.S.S.S.SS
+.A.A.A.A.A
+..M.M.M.MM
+.X.X.XMASX
+
+
+Cercare tutte le occorrenze della parola "XMAS" nella griglia, tenendo conto che possono essere presenti in varie direzioni: orizzontale, verticale, diagonale, avanti e indietro.
+Iterare attraverso ogni cella della griglia e utilizzare la funzione per verificare se "XMAS" è presente a partire da quella cella.
+Contare tutte le occorrenze trovate.
+
+
+** 2 part
+
+M.S
+.A.
+M.S
+
+
+Definire quattro pattern che rappresentano le posizioni relative delle lettere "M", "A", "S" nella forma di una X.
+Ognuno di questi pattern cattura una configurazione possibile di X-MAS.
+Le configurazioni considerano sia le lettere scritte in avanti che quelle scritte all'indietro.
