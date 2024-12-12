@@ -55,3 +55,70 @@ function processUpdates() {
 }
 
 //console.log(processUpdates());
+
+//2 parte
+
+// Funzione per ordinare un aggiornamento secondo le regole
+function sortUpdate(update, graph) {
+    const adjacencyList = new Map();
+    const inDegree = new Map();
+
+    update.forEach(page => {
+        adjacencyList.set(page, []);
+        inDegree.set(page, 0);
+    });
+
+    for (const [before, after] of graph.entries()) {
+        for (const afterPage of after) {
+            if (adjacencyList.has(before) && adjacencyList.has(afterPage)) {
+                adjacencyList.get(before).push(afterPage);
+                inDegree.set(afterPage, inDegree.get(afterPage) + 1);
+            }
+        }
+    }
+
+    const zeroInDegreeQueue = [];
+    inDegree.forEach((degree, page) => {
+        if (degree === 0) {
+            zeroInDegreeQueue.push(page);
+        }
+    });
+
+    const sortedUpdate = [];
+    while (zeroInDegreeQueue.length > 0) {
+        const currentPage = zeroInDegreeQueue.shift();
+        sortedUpdate.push(currentPage);
+
+        adjacencyList.get(currentPage).forEach(neighbor => {
+            inDegree.set(neighbor, inDegree.get(neighbor) - 1);
+            if (inDegree.get(neighbor) === 0) {
+                zeroInDegreeQueue.push(neighbor);
+            }
+        });
+    }
+
+    return sortedUpdate;
+}
+
+
+function findMiddlePage(update) {
+    const middleIndex = Math.floor(update.length / 2);
+    return update[middleIndex];
+}
+
+function processIncorrectUpdates() {
+    const { rules, updates } = getFileInput();
+    const graph = buildGraph(rules);
+    let sumOfMiddlePages = 0;
+
+    updates.forEach(update => {
+        if (!isUpdateValid(update, graph)) {
+            const sortedUpdate = sortUpdate(update, graph);
+            sumOfMiddlePages += findMiddlePage(sortedUpdate);
+        }
+    });
+
+    return sumOfMiddlePages;
+}
+
+console.log(processIncorrectUpdates());

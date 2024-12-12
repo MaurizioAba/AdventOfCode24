@@ -32,3 +32,11 @@ Determinare quali aggiornamenti delle pagine sono già in ordine corretto second
 Ogni aggiornamento consiste in una serie di numeri di pagina, poi verificare se rispettano le regole del tipo X|Y
 che indicano che la pagina X deve essere "stampata" prima della Y. 
 Inoltre serve da calcolare la somma dei numeri delle pagine centrali di tutti gli aggiornamenti che sono già in ordine corretto.
+
+Per la seconda parte:
+Costruzione del Grafo:
+Le regole di ordinamento delle pagine sono state trasformate in un grafo di dipendenze.
+Poi verificare e Correzione degli aggiornamenti:
+da verificare gli aggiornamenti usando il grafo.
+Gli aggiornamenti non corretti ordinarli con algoritmo di ordinamento topologico.
+Calcolo della Pagina Centrale con la somma delle pagine centrali degli aggiornamenti corretti.
