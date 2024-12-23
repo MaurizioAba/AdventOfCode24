@@ -1,0 +1,2 @@
+Trovare tutte le posizioni delle antenne, poi calcola e aggiunge le posizioni degli antinodi generati dalle antenne con la stessa frequenza.
+La funzione principale che legge la mappa, calcola l'impatto del segnale e stampa il risultato.
